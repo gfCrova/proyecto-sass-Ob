@@ -1,0 +1,231 @@
+
+@use "components";
+
+
+@mixin section-display {
+    width: 100%;
+    max-width: 992px;
+    margin: auto;
+    padding: 3rem;
+}
+
+html {
+    min-width: 100vw;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(12, 65, 134, 0.644), rgba(122, 117, 117, 0.671));
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    height: 4rem;
+    border-bottom: solid 1px #333;
+}
+
+.logo img {
+    max-width: 7rem;
+    &:hover {
+        transform: scale(1.1);
+        transition: all 0.5s;
+    }
+}
+
+.home-img img {
+    max-width: 20rem;
+}
+
+.sec-home {
+    display: flex;
+    @include section-display();
+    align-items: center;
+    .home-cta {
+        flex: 1;
+        .cta-text {
+            color: components.$color-main;
+            i {
+                font-weight: 600;
+            }
+        }
+        .home-title {
+            width: 20rem;
+            font-size: 3rem;
+        }
+
+        .home-description {
+            width: 300px
+        }
+
+        .lead-magnet {
+            .input-col {
+                max-width: 200px;
+            }
+        }
+    }
+}
+
+.sec-features {
+    @include section-display();
+    .intro {
+        text-align: center;
+        h3 {
+            font-size: 1.8rem;
+        }
+        p {
+            font-size: 0.8rem;
+            color: rgb(255, 255, 255);
+        }
+    }
+
+    .features {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        .text {
+            padding: 2rem 0;
+            flex: 1;
+            .feature {
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                .description {
+                    text-align: start;
+                    margin-left: 1rem;
+                    max-width: 20rem;
+                    .description-title {
+                        font-size: 1.15rem;
+                    }
+                    .description-text {
+                        font-size: 1rem;
+                    }
+                }
+            }
+        }
+
+        .image {
+            img {
+                max-width: 30rem;
+            }
+        }
+    }
+}
+
+.sec-benefits {
+
+    color: #ddd;
+
+    border-top: 1px solid #ddd;
+    .intro {
+        text-align: center;
+        text-shadow: 0 0 5px black;
+        @extend .sec-features, .intro;
+    }
+    .benefits-cards {
+        width: 100%;
+        padding: 0 2rem 2rem 2rem;
+        color: #ddd;
+
+        .description {
+            .text {
+                color: #141414;
+            }
+        }
+
+        p{
+            color: rgb(77, 75, 75);
+        }
+    }
+}
+
+.sec-kpis {
+    width: 100%;
+    background-color: components.$color-main;
+    color: white;
+    padding: 4rem;
+    .kpi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .number {
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+
+        .desc {
+            font-size: 0.9rem;
+            color: #ffffff;
+        }
+    }
+}
+
+.sec-onboarding {
+    .intro {
+        text-align: center;
+        @extend .sec-features, .intro;
+    }
+
+    .steps {
+        padding: 0 7rem 5rem 7rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .step-separator {
+            flex: 1;
+            border-top: 2px solid #ddd;
+            margin: 0 1rem;
+        }
+    }
+}
+
+
+.sec-footer-cta {
+    background-color: components.$color-footer;
+    padding: 5rem;
+    background-image: url(/assets/img/foo.png);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    .footer-cta {
+        width: 50%;
+        .cta-title {
+            font-size: 2rem;
+        }
+    
+        .cta-description {
+            font-size: 1.1rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+
+    .sec-benefits {
+        .intro h4 {
+            font-size: 2rem;
+        }
+    }
+
+    .sec-onboarding {
+        .steps {
+            display: flex;
+            flex-direction: column;
+            .icon-desc {
+                .title {
+                    text-align: center;
+                }
+            }
+        }
+    }
+
+    .sec-footer-cta {
+        background-image: none;
+        .footer-cta {
+            text-align: center;
+            width: 100%;
+        }
+    }
+}
