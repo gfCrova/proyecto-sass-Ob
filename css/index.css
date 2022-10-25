@@ -114,6 +114,7 @@ body {
 .nav {
   display: flex;
   align-items: center;
+  background-color: #ddd;
   justify-content: space-around;
   width: 100%;
   height: 4rem;
@@ -130,6 +131,9 @@ body {
 
 .home-img img {
   max-width: 20rem;
+  animation-duration: 2s;
+  animation-name: img-ani;
+  animation-timing-function: ease-in;
 }
 
 .sec-home {
@@ -139,12 +143,16 @@ body {
   margin: auto;
   padding: 3rem;
   align-items: center;
+  transition: all 1s;
 }
 .sec-home .home-cta {
   flex: 1;
 }
 .sec-home .home-cta .cta-text {
   color: #26aac2;
+}
+.sec-home .home-cta .cta-text span {
+  color: #ddd;
 }
 .sec-home .home-cta .cta-text i {
   font-weight: 600;
@@ -155,6 +163,9 @@ body {
 }
 .sec-home .home-cta .home-description {
   width: 300px;
+  color: #26aac2;
+  font-weight: bold;
+  text-shadow: 0 0 4px rgb(66, 66, 66);
 }
 .sec-home .home-cta .lead-magnet .input-col {
   max-width: 200px;
@@ -197,16 +208,22 @@ body {
 }
 .sec-features .features .text .feature .description .description-title, .sec-onboarding .intro .features .text .feature .description .description-title, .sec-benefits .intro .features .text .feature .description .description-title {
   font-size: 1.15rem;
+  font-weight: bold;
 }
 .sec-features .features .text .feature .description .description-text, .sec-onboarding .intro .features .text .feature .description .description-text, .sec-benefits .intro .features .text .feature .description .description-text {
   font-size: 1rem;
+  color: #ddd;
 }
 .sec-features .features .image img, .sec-onboarding .intro .features .image img, .sec-benefits .intro .features .image img {
   max-width: 30rem;
+  animation-name: img-ani2;
+  animation-duration: 2s;
+  animation-timing-function: ease-in;
 }
 
 .sec-benefits {
   color: #ddd;
+  transition: all 2s;
   border-top: 1px solid #ddd;
 }
 .sec-benefits .intro {
@@ -217,6 +234,10 @@ body {
   width: 100%;
   padding: 0 2rem 2rem 2rem;
   color: #ddd;
+}
+.sec-benefits .benefits-cards .benefit:hover {
+  transform: scale(1.1);
+  transition: all 0.6s;
 }
 .sec-benefits .benefits-cards .description .text {
   color: #141414;
@@ -235,6 +256,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 1s;
 }
 .sec-kpis .kpi .number {
   font-size: 3.5rem;
@@ -294,6 +316,25 @@ body {
   .sec-footer-cta .footer-cta {
     text-align: center;
     width: 100%;
+  }
+}
+@keyframes img-ani {
+  0% {
+    transform: scale(0.1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes img-ani2 {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
   }
 }
 
