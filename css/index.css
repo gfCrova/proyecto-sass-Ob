@@ -10,6 +10,12 @@
 .btn-main:hover, .btn-main-s:hover {
   background-color: white;
   color: #26aac2;
+  transform: scale(1.1);
+  transition: all 0.5s;
+}
+.btn-main:active, .btn-main-s:active {
+  cursor: progress;
+  transform: scale(0.8);
 }
 .btn-main-s {
   font-size: 0.75rem;
@@ -52,6 +58,9 @@
   color: white;
   background-color: #26aac2;
   border-radius: 10px;
+}
+.main-menu li a:active {
+  transform: scale(0.7);
 }
 
 .icon-sm i {
@@ -109,6 +118,7 @@ body {
   padding: 0;
   margin: 0;
   background: linear-gradient(0deg, rgba(255, 255, 255, 0.5), rgba(12, 65, 134, 0.644), rgba(122, 117, 117, 0.671));
+  transition: all 0.3s;
 }
 
 .nav {
@@ -323,7 +333,7 @@ body {
     transform: scale(0.1);
   }
   50% {
-    transform: scale(2);
+    transform: scale(1.5);
   }
   100% {
     transform: scale(1);
@@ -333,8 +343,11 @@ body {
   0% {
     transform: rotateY(0deg);
   }
-  100% {
+  50% {
     transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(0deg);
   }
 }
 

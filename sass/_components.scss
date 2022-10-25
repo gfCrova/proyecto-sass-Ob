@@ -24,6 +24,12 @@ $color-footer: #F4F8FE;
     &:hover {
         background-color: white;
         color: $color-main;
+        transform: scale(1.1);
+        transition: all 0.5s;
+    }
+    &:active {
+        cursor: progress;
+        transform: scale(0.8);
     }
 
     &-s {
@@ -67,6 +73,9 @@ $color-footer: #F4F8FE;
                     color: white;
                     background-color: #26aac2;
                     border-radius: 10px;
+                }
+                &:active {
+                    transform: scale(0.7);
                 }
             }
         }
