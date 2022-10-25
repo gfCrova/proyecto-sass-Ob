@@ -124,6 +124,21 @@ $color-footer: #F4F8FE;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    &:nth-child(1) {
+        animation-name: icon-ani1;
+        animation-duration: 1.5s;
+        animation-timing-function: ease-in-out;
+    }
+    &:nth-child(2) {
+        animation-name: icon-ani2;
+        animation-duration: 2.5s;
+        animation-timing-function: ease-in-out;
+    }
+    &:nth-child(3) {
+        animation-name: icon-ani3;
+        animation-duration: 3.5s;
+        animation-timing-function: ease-in-out;
+    }
     .icon {
         padding: 0;
         color: $color-main;
@@ -133,5 +148,32 @@ $color-footer: #F4F8FE;
         font-size: 1.5rem;
         font-weight: 600;
         margin-top: -1rem;
+    }
+}
+
+@keyframes icon-ani1 {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes icon-ani2 {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes icon-ani3 {
+    0% {
+        transform: scale(0.1);
+    }
+    100% {
+        transform: scale(1);
     }
 }
